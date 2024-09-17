@@ -4,7 +4,8 @@ public class Card {
 
 	private String name;
 	private Integer life = 100;
-	private Double power;
+	private Integer shield = 20;
+	private Integer power = 5;
 
 	public Card() {
 	}
@@ -13,27 +14,47 @@ public class Card {
 		setName(name);
 	}
 
+	// definir nome da carta
 	public void setName(String newName) {
 		this.name = newName;
 	}
 
+	// consultar nome da carta atual
 	public String getName() {
 		return name;
 	}
 
-	public void setLife(int newDamage) {
-		this.life -= newDamage;
-	}
 
-	public Integer getLife() {
-		return life;
-	}
-
-	public void setPower(Double newPower) {
-		this.power = (newPower / 100) * newPower;
-	}
-
-	public Double getPower() {
+	// recebe dano de atack
+	
+	public Integer setPower() {
 		return power;
 	}
+	
+	public void getLife(int receiveDamage) {
+		this.life -= receiveDamage;
+	}
+	
+	
+	// skills
+	// 1
+	public void shield () {
+		this.shield += 200;
+	}
+	
+	//2
+	// cura
+	public void cure () {
+		this.life += 10;
+
+	}
+	
+	//3
+	public Boolean skipTurn () {
+		return false;
+	}
+	
+	
+	
+	
 }
